@@ -5,6 +5,7 @@ feature do
     Todo.create(email: 'nottoto@example.com', title: 'do stuff')
 
     sign_in_as "toto@example.com"
-    expect(page).not_to have_css ".todos li", text: "do stuff"
+    expect(page).not_to display_todo "do stuff"
+
   end
 end
