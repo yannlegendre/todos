@@ -4,6 +4,11 @@ class CompletionsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    todo.mark_as_undone!
+    redirect_to root_path
+  end
+
   private
 
   def todo
